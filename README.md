@@ -1,43 +1,43 @@
-# Extractor de Transcripciones de YouTube
+# YouTube Transcript Extractor
 
-Esta herramienta permite extraer transcripciones de videos de YouTube, ya sea de videos individuales o de una lista de reproducción completa. Las transcripciones se guardan en un archivo Markdown, con secciones separadas para cada video.
+A tool to extract transcripts from YouTube videos, either from individual videos or from a complete playlist. The transcripts are saved in a Markdown file, with separate sections for each video.
 
-## Instalación
+## Installation
 
 ```bash
 uv pip install pytube youtube-transcript-api
 ```
 
-## Uso
+## Usage
 
-### Para extraer transcripciones de una lista de reproducción:
-
-```bash
-python extract_transcripts.py --playlist "URL_DE_LA_PLAYLIST" --output transcripts.md
-```
-
-### Para extraer transcripciones de videos individuales:
+### To extract transcripts from a playlist:
 
 ```bash
-python extract_transcripts.py --videos "URL_VIDEO1" "URL_VIDEO2" --output transcripts.md
+python extract_transcripts.py --playlist "PLAYLIST_URL" --output transcripts.md
 ```
 
-### Opciones disponibles:
+### To extract transcripts from individual videos:
 
-- `-p, --playlist`: URL de la lista de reproducción de YouTube
-- `-v, --videos`: Una o más URLs de videos individuales
-- `-o, --output`: Nombre del archivo de salida (por defecto: transcripts.md)
+```bash
+python extract_transcripts.py --videos "VIDEO_URL1" "VIDEO_URL2" --output transcripts.md
+```
 
-## Formato de Salida
+### Available options:
 
-El script genera un archivo Markdown con el siguiente formato:
+- `-p, --playlist`: YouTube playlist URL
+- `-v, --videos`: One or more individual video URLs
+- `-o, --output`: Output file name (default: transcripts.md)
+
+## Output Format
+
+The script generates a Markdown file with the following format:
 
 ```markdown
-## [Título del Video 1]
-[Transcripción del Video 1]
+## [Video Title 1]
+[Video 1 Transcript]
 
-## [Título del Video 2]
-[Transcripción del Video 2]
+## [Video Title 2]
+[Video 2 Transcript]
 ```
 
-Si una transcripción no está disponible, se indicará con el mensaje "_Transcripción no disponible._" 
+If a transcript is not available, it will be indicated with the message "_Transcript not available._" 
